@@ -1,0 +1,7 @@
+xst -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -ifn "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.xst" -ofn "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.syr"
+xst -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -ifn "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.xst" -ofn "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.syr"
+ngdbuild -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -dd _ngo  -nt timestamp -i -p xc3s1200e-fg320-4 "PipelineCPU.ngc" PipelineCPU.ngd
+map -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -p xc3s1200e-fg320-4 -cm area -pr off -k 4 -c 100 -o PipelineCPU_map.ncd PipelineCPU.ngd PipelineCPU.pcf
+par -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -w -intstyle ise -ol std -t 1 PipelineCPU_map.ncd PipelineCPU.ncd PipelineCPU.pcf
+trce -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -e 3 -s 4 -xml PipelineCPU PipelineCPU.ncd -o PipelineCPU.twr PipelineCPU.pcf -ucf PipelineCPU.ucf
+bitgen -ise "C:/Users/Zijian Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -f PipelineCPU.ut PipelineCPU.ncd

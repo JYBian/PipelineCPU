@@ -1,0 +1,231 @@
+Release 10.1 Map K.31 (nt)
+Xilinx Mapping Report File for Design 'PipelineCPU'
+
+Design Information
+------------------
+Command Line   : map -ise "C:/Users/Zijian
+Sui/Desktop/pipelineCPU/PipelineCPU/PipelineCPU.ise" -intstyle ise -p
+xc3s1200e-fg320-4 -cm area -pr off -k 4 -c 100 -o PipelineCPU_map.ncd
+PipelineCPU.ngd PipelineCPU.pcf 
+Target Device  : xc3s1200e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.46 $
+Mapped Date    : Fri Nov 24 10:37:13 2017
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    3
+Logic Utilization:
+  Total Number Slice Registers:         292 out of  17,344    1%
+    Number used as Flip Flops:          283
+    Number used as Latches:               9
+  Number of 4 input LUTs:             1,187 out of  17,344    6%
+Logic Distribution:
+  Number of occupied Slices:            672 out of   8,672    7%
+    Number of Slices containing only related logic:     672 out of     672 100%
+    Number of Slices containing unrelated logic:          0 out of     672   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       1,221 out of  17,344    7%
+    Number used as logic:               867
+    Number used as a route-thru:         34
+    Number used for Dual Port RAMs:     320
+      (Two LUTs used per Dual Port RAM)
+  Number of bonded IOBs:                 20 out of     250    8%
+  Number of RAMB16s:                      1 out of      28    3%
+  Number of BUFGMUXs:                     2 out of      24    8%
+
+Peak Memory Usage:  241 MB
+Total REAL time to MAP completion:  3 secs 
+Total CPU time to MAP completion:   2 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Modular Design Summary
+Section 11 - Timing Report
+Section 12 - Configuration String Information
+Section 13 - Control Set Information
+Section 14 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:LIT:243 - Logical network M27/Mram_Reg_ren_11/SPO has no load.
+WARNING:LIT:395 - The above warning message base_net_load_rule is repeated 159
+   more times for the following (max. 5 shown):
+   M27/Mram_Reg_ren_14/SPO,
+   M27/Mram_Reg_ren_12/SPO,
+   M27/Mram_Reg_ren_13/SPO,
+   M27/Mram_Reg_ren_15/SPO,
+   M27/Mram_Reg_ren_16/SPO
+   To see the details of these warning messages, please use the -detail switch.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net M26/regDst_not0001 is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+
+Section 3 - Informational
+-------------------------
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) optimized away
+
+Section 5 - Removed Logic
+-------------------------
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		XST_GND
+VCC 		XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |             | Strength | Rate |              |          | Delay    |
++----------------------------------------------------------------------------------------------------------------------------------------+
+| an<0>                              | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| an<1>                              | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| an<2>                              | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| an<3>                              | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<0>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<1>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<2>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<3>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<4>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<5>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| c<6>                               | IOB              | OUTPUT    | LVCMOS25    | 12       | SLOW |              |          | 0 / 0    |
+| clk                                | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| clkssd                             | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| reset                              | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showpc                             | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showreg<0>                         | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showreg<1>                         | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showreg<2>                         | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showreg<3>                         | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
+| showreg<4>                         | IBUF             | INPUT     | LVCMOS25    |          |      |              |          | 0 / 0    |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Modular Design Summary
+-----------------------------------
+Modular Design not used for this design.
+
+Section 11 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 12 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 13 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 14 - Utilization by Hierarchy
+-------------------------------------
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Module             | Partition | Slices        | Slice Reg     | LUTs          | LUTRAM        | BRAM      | MULT18X18 | BUFG  | DCM   | Full Hierarchical  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| PipelineCPU/       |           | 293/1150      | 0/292         | 173/1221      | 0/320         | 0/1       | 0/0       | 2/2   | 0/0   | PipelineCPU        |
+| +M0                |           | 16/16         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M0     |
+| +M1                |           | 13/13         | 18/18         | 5/5           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M1     |
+| +M12               |           | 5/5           | 0/0           | 7/7           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M12    |
+| +M14               |           | 20/20         | 0/0           | 36/36         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M14    |
+| +M15               |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M15    |
+| +M16               |           | 16/16         | 18/18         | 3/3           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M16    |
+| +M17               |           | 7/7           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M17    |
+| +M18               |           | 26/26         | 0/0           | 43/43         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M18    |
+| +M2                |           | 2/2           | 4/4           | 4/4           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M2     |
+| +M20               |           | 30/30         | 40/40         | 2/2           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M20    |
+| +M21               |           | 15/15         | 0/0           | 24/24         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M21    |
+| +M22               |           | 63/63         | 0/0           | 95/95         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M22    |
+| +M23               |           | 48/48         | 0/0           | 64/64         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M23    |
+| +M24               |           | 20/20         | 0/0           | 40/40         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M24    |
+| +M25               |           | 1/1           | 0/0           | 1/1           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M25    |
+| +M26               |           | 5/5           | 9/9           | 10/10         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M26    |
+| +M27               |           | 160/160       | 0/0           | 320/320       | 320/320       | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M27    |
+| +M29               |           | 83/83         | 92/92         | 1/1           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M29    |
+| +M31               |           | 7/7           | 0/0           | 10/10         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M31    |
+| +M32               |           | 10/10         | 0/0           | 14/14         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M32    |
+| +M33               |           | 34/34         | 0/0           | 67/67         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M33    |
+| +M34               |           | 41/41         | 0/0           | 67/67         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M34    |
+| +M35               |           | 32/32         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M35    |
+| +M37               |           | 89/89         | 0/0           | 132/132       | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M37    |
+| +M38               |           | 5/5           | 0/0           | 5/5           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M38    |
+| +M39               |           | 69/69         | 72/72         | 0/0           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M39    |
+| +M40               |           | 0/0           | 0/0           | 0/0           | 0/0           | 1/1       | 0/0       | 0/0   | 0/0   | PipelineCPU/M40    |
+| +M41               |           | 21/21         | 39/39         | 0/0           | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M41    |
+| +M42               |           | 18/18         | 0/0           | 32/32         | 0/0           | 0/0       | 0/0       | 0/0   | 0/0   | PipelineCPU/M42    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+* Slices can be packed with basic elements from multiple hierarchies.
+  Therefore, a slice will be counted in every hierarchical module
+  that each of its packed basic elements belong to.
+** For each column, there are two numbers reported <A>/<B>.
+   <A> is the number of elements that belong to that specific hierarchical module.
+   <B> is the total number of elements from that hierarchical module and any lower level
+   hierarchical modules below.
+*** The LUTRAM column counts all LUTs used as memory including RAM, ROM, and shift registers.
